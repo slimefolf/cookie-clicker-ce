@@ -1,0 +1,26 @@
+palettes:
+  - name: global_palette
+    fixed-entries:
+      - color: {index: 0, r: 255, g: 0, b: 255}
+      - color: {index: 1, r: 0, g: 0, b: 0}
+      - color: {index: 2, r: 37, g: 108, b: 154}
+    images: automatic
+
+converts:
+  - name: sprites
+    palette: global_palette
+    transparent-color-index: 0
+    compress: zx0
+    images:
+     - assets/mouse/mouse1.png
+     - assets/bigCookie/perfectCookie.png
+
+outputs:
+  - type: appvar
+    name: ccsprt
+    include-file: ccsprt.h
+    source-format: c
+    palettes:
+      - global_palette
+    converts:
+      - sprites
